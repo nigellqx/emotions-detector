@@ -45,13 +45,13 @@ def load_saved_artifacts():
     global __emotion_to_index
     global __index_to_emotion
 
-    with open("./server/artifacts/class_dictionary.json", "r") as f:
+    with open("./artifacts/class_dictionary.json", "r") as f:
         __emotion_to_index = json.load(f)
         __index_to_emotion = {v:k for k,v in __emotion_to_index.items()}
 
     global __model
     if __model is None:
-        with open('./server/artifacts/saved_model.pkl', 'rb') as f:
+        with open('./artifacts/saved_model.pkl', 'rb') as f:
             __model = joblib.load(f)
 
 def get_cv2_image_from_base64_string(b64str):
@@ -66,7 +66,7 @@ def get_cv2_image_from_base64_string(b64str):
     return img
 
 def get_cropped_face_if_valid(image_path, image_base64_data):
-    face_cascade = cv2.CascadeClassifier('./server/opencv/haarcascades/haarcascade_frontalface_default.xml')
+    face_cascade = cv2.CascadeClassifier('./opencv/haarcascades/haarcascade_frontalface_default.xml')
     if image_path:
         img = cv2.imread(image_path)
     else:
@@ -82,4 +82,4 @@ def get_cropped_face_if_valid(image_path, image_base64_data):
 
 if __name__ == '__main__':
     load_saved_artifacts()
-    print(classify_emotion(None, "./server/test.jpg"))
+    print(classify_emotion(None, "./test.jpg"))
