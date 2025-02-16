@@ -13,5 +13,8 @@ This project is done for me to learn how to gather image data, how to clean and 
 - Use sklearn for machine learning algorithms
 
 
-![Emotions Detector](https://github.com/user-attachments/assets/d4c166ef-250b-4424-8f88-c52c003df71f)
+
+https://github.com/user-attachments/assets/2906e145-0f4f-4b6e-98f1-78e16a43c2cf
+
+
 
